@@ -84,10 +84,6 @@ public class InfoTree {
     private int leafCount = 0;
     private int treeSize = 0;
     
-    public static void main(String[] args) {
-
-    }
-
     /**
      * Creates an InfoTree object, gathers all information about aInputTree and stores in indexes.
      * aInputTree is not needed any more.
