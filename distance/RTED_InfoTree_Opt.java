@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import util.ArrayPrinter;
 import util.LabelDictionary;
 import util.LblTree;
 
