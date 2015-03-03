@@ -13,12 +13,12 @@
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package convenience;
+package it.unibz.inf.rted.convenience;
 
 import java.util.LinkedList;
 
-import util.LblTree;
-import distance.RTED_InfoTree_Opt;
+import it.unibz.inf.rted.util.LblTree;
+import it.unibz.inf.rted.distance.RTED_InfoTree_Opt;
 
 /**
  * 

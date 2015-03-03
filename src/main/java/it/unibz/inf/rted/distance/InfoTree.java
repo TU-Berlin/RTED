@@ -13,14 +13,14 @@
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package distance;
+package it.unibz.inf.rted.distance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
-import util.LblTree;
-import util.LabelDictionary;
+import it.unibz.inf.rted.util.LblTree;
+import it.unibz.inf.rted.util.LabelDictionary;
 
 /**
  * Stores all needed information about a single tree in several indeces. 

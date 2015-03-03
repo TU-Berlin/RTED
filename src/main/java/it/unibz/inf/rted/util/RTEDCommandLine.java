@@ -13,7 +13,7 @@
 //    You should have received a copy of the GNU Affero General Public License
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package util;
+package it.unibz.inf.rted.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Vector;
 
-import distance.RTED_InfoTree_Opt;
+import it.unibz.inf.rted.distance.RTED_InfoTree_Opt;
 
 /**
  * This is the command line access for running RTED algorithm.
