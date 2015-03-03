@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<equal>
+    <energy/>
+    <times>
+        <mass/>
+        <power>
+            <speedoflight/>
+            <two/>
+        </power>
+    </times>
+</equal>

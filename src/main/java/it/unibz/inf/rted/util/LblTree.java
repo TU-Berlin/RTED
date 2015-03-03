@@ -15,6 +15,9 @@
 
 package it.unibz.inf.rted.util;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.Enumeration;
 import java.util.Vector;
@@ -161,7 +164,15 @@ public class LblTree extends DefaultMutableTreeNode implements Comparable {
 		}
 		return node;
 	}
-	
+	public static LblTree fromXML(Node n) {
+        String name = n.getNodeName();
+        LblTree t = new LblTree( name, -1);
+        NonWhitespaceNodeList l = new NonWhitespaceNodeList(n.getChildNodes());
+        for(Node i:l ){
+            t.add( fromXML(i) );
+        }
+        return t;
+    }
 	/**
 	 * String representation of a tree. Reverse operation of {@link #fromString(String)}.
 	 * treeID is NO_ID, it is skiped in the string representation.
