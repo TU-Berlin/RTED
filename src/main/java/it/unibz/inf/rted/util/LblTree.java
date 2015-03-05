@@ -15,7 +15,6 @@
 
 package it.unibz.inf.rted.util;
 
-import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -47,10 +46,10 @@ public class LblTree extends DefaultMutableTreeNode implements Comparable {
 	public static final int HIDE_ALL_LABELS = 3;
 	public static final int RANDOM_ROOT_LABEL = 4;
         
-        /**
+	/**
 	 * no node id
 	 */
-	public final int NO_NODE = -1;
+	public final static int NO_NODE = -1;
 	
 	/**
 	 * no tree id is defined
@@ -165,14 +164,22 @@ public class LblTree extends DefaultMutableTreeNode implements Comparable {
 		return node;
 	}
 	public static LblTree fromXML(Node n) {
-        String name = n.getNodeName();
-        LblTree t = new LblTree( name, -1);
+		String name = getNodeName( n );
+		LblTree t = new LblTree( name, NO_NODE);
         NonWhitespaceNodeList l = new NonWhitespaceNodeList(n.getChildNodes());
         for(Node i:l ){
             t.add( fromXML(i) );
         }
         return t;
     }
+
+	private static String getNodeName (Node n) {
+		if( n.getNodeType() == Node.TEXT_NODE ){
+			return n.getTextContent().trim();
+		}
+		return n.getNodeName();
+	}
+
 	/**
 	 * String representation of a tree. Reverse operation of {@link #fromString(String)}.
 	 * treeID is NO_ID, it is skiped in the string representation.

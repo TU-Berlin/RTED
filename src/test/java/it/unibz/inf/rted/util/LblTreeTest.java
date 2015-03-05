@@ -36,7 +36,7 @@ public class LblTreeTest {
     public void testFromString() throws Exception {
         LblTree lblTest = LblTree.fromString( "{equal{energy}{times{mass}{power{speedoflight}{two}}}}" );
         lblTest.prettyPrint();
-        assertEquals(expectedPseudoMath, outContent.toString());
+        assertEquals( expectedPseudoMath, outContent.toString().replaceAll( "\r", "" ) );
 
     }
     @Test
@@ -45,9 +45,52 @@ public class LblTreeTest {
         Node rootElement = doc.getDocumentElement();
         LblTree lblTest = LblTree.fromXML( rootElement );
         lblTest.prettyPrint();
-        assertEquals(expectedPseudoMath, outContent.toString());
+        assertEquals( expectedPseudoMath, outContent.toString().replaceAll( "\r", "" ) );
     }
 
+	@Test
+	public void testFromMathML() throws Exception {
+		final String MathMLTree = "*---+ 'math' \n" +
+			"    +---+ 'semantics' \n" +
+			"        +---+ 'mrow' \n" +
+			"            +---+ 'mi' \n" +
+			"                +---+ 'E' \n" +
+			"            +---+ 'mo' \n" +
+			"                +---+ '=' \n" +
+			"            +---+ 'mrow' \n" +
+			"                +---+ 'mi' \n" +
+			"                    +---+ 'm' \n" +
+			"                +---+ 'mo' \n" +
+			"                    +---+ '\u2062' \n" +//InvisibleTimes
+			"                +---+ 'msup' \n" +
+			"                    +---+ 'mi' \n" +
+			"                        +---+ 'c' \n" +
+			"                    +---+ 'mn' \n" +
+			"                        +---+ '2' \n" +
+			"        +---+ 'annotation-xml' \n" +
+			"            +---+ 'apply' \n" +
+			"                +---+ 'eq' \n" +
+			"                +---+ 'ci' \n" +
+			"                    +---+ 'E' \n" +
+			"                +---+ 'apply' \n" +
+			"                    +---+ 'times' \n" +
+			"                    +---+ 'ci' \n" +
+			"                        +---+ 'm' \n" +
+			"                    +---+ 'apply' \n" +
+			"                        +---+ 'csymbol' \n" +
+			"                            +---+ 'superscript' \n" +
+			"                        +---+ 'ci' \n" +
+			"                            +---+ 'c' \n" +
+			"                        +---+ 'cn' \n" +
+			"                            +---+ '2' \n" +
+			"        +---+ 'annotation' \n" +
+			"            +---+ 'E=mc^{2}' \n";
+		Document doc = Resource2Doc("Emc2.mml.xml");
+		Node rootElement = doc.getDocumentElement();
+		LblTree lblTest = LblTree.fromXML( rootElement );
+		lblTest.prettyPrint();
+		assertEquals( MathMLTree, outContent.toString().replaceAll( "\r", "" ) );
+	}
 
     /**
      * Helper program: Transforms a String to a XML Document.

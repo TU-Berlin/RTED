@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" id="p1.1.m2.1" class="ltx_Math" alttext="c^{2}m=E" display="inline">
+    <semantics id="p1.1.m2.1a">
+        <mrow id="p1.1.m2.1.6" xref="p1.1.m2.1.6.cmml">
+            <mrow id="p1.1.m2.1.6.1" xref="p1.1.m2.1.6.1.cmml">
+                <msup id="p1.1.m2.1.6.1.2" xref="p1.1.m2.1.6.1.2.cmml">
+                    <mi id="p1.1.m2.1.1" xref="p1.1.m2.1.1.cmml">c</mi>
+
+                    <mn id="p1.1.m2.1.2.1" xref="p1.1.m2.1.2.1.cmml">2</mn>
+
+                </msup>
+                <mo id="p1.1.m2.1.6.1.1" xref="p1.1.m2.1.6.1.1.cmml">⁢</mo>
+                <mi id="p1.1.m2.1.3" xref="p1.1.m2.1.3.cmml">m</mi>
+            </mrow>
+            <mo id="p1.1.m2.1.4" xref="p1.1.m2.1.4.cmml">=</mo>
+            <mi id="p1.1.m2.1.5" xref="p1.1.m2.1.5.cmml">E</mi>
+        </mrow>
+        <annotation-xml encoding="MathML-Content" id="p1.1.m2.1b">
+            <apply id="p1.1.m2.1.6.cmml" xref="p1.1.m2.1.6">
+                <eq id="p1.1.m2.1.4.cmml" xref="p1.1.m2.1.4"/>
+                <apply id="p1.1.m2.1.6.1.cmml" xref="p1.1.m2.1.6.1">
+                    <times id="p1.1.m2.1.6.1.1.cmml" xref="p1.1.m2.1.6.1.1"/>
+                    <apply id="p1.1.m2.1.6.1.2.cmml" xref="p1.1.m2.1.6.1.2">
+                        <csymbol cd="ambiguous" id="p1.1.m2.1.6.1.2.1.cmml">superscript</csymbol>
+                        <ci id="p1.1.m2.1.1.cmml" xref="p1.1.m2.1.1">c</ci>
+                        <cn type="integer" id="p1.1.m2.1.2.1.cmml" xref="p1.1.m2.1.2.1">2</cn>
+                    </apply>
+                    <ci id="p1.1.m2.1.3.cmml" xref="p1.1.m2.1.3">m</ci>
+                </apply>
+                <ci id="p1.1.m2.1.5.cmml" xref="p1.1.m2.1.5">E</ci>
+            </apply>
+        </annotation-xml>
+        <annotation encoding="application/x-tex" id="p1.1.m2.1c">c^{2}m=E</annotation>
+    </semantics>
+</math>
