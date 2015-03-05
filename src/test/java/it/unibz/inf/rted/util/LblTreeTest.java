@@ -41,8 +41,7 @@ public class LblTreeTest {
     }
     @Test
     public void testFromXML() throws Exception {
-        Document doc = Resource2Doc("pseudoMath.xml");
-        Node rootElement = doc.getDocumentElement();
+        Node rootElement = Resource2Node( "pseudoMath.xml" );
         LblTree lblTest = LblTree.fromXML( rootElement );
         lblTest.prettyPrint();
         assertEquals( expectedPseudoMath, outContent.toString().replaceAll( "\r", "" ) );
@@ -85,14 +84,18 @@ public class LblTreeTest {
 			"                            +---+ '2' \n" +
 			"        +---+ 'annotation' \n" +
 			"            +---+ 'E=mc^{2}' \n";
-		Document doc = Resource2Doc("Emc2.mml.xml");
-		Node rootElement = doc.getDocumentElement();
+		Node rootElement = Resource2Node("Emc2.mml.xml");
 		LblTree lblTest = LblTree.fromXML( rootElement );
 		lblTest.prettyPrint();
 		assertEquals( MathMLTree, outContent.toString().replaceAll( "\r", "" ) );
 	}
 
-    /**
+	public Node Resource2Node (String ResourceName) throws ParserConfigurationException, IOException, URISyntaxException {
+		Document doc = Resource2Doc( ResourceName );
+		return doc.getDocumentElement();
+	}
+
+	/**
      * Helper program: Transforms a String to a XML Document.
      *
      * @param ResourceName     the name of the xml resource

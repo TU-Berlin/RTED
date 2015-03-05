@@ -15,10 +15,11 @@
 
 package it.unibz.inf.rted.convenience;
 
-import java.util.LinkedList;
-
-import it.unibz.inf.rted.util.LblTree;
 import it.unibz.inf.rted.distance.RTED_InfoTree_Opt;
+import it.unibz.inf.rted.util.LblTree;
+import org.w3c.dom.Node;
+
+import java.util.LinkedList;
 
 /**
  * 
@@ -40,6 +41,19 @@ public class RTED {
 	public static double computeDistance(String tree1, String tree2) {
 		RTED_InfoTree_Opt rted = new RTED_InfoTree_Opt(1, 1, 1);
 		return rted.nonNormalizedTreeDist(LblTree.fromString(tree1), LblTree.fromString(tree2));
+	}
+
+	/**
+	 * Computes the tree edit distance between two trees using the RTED algorithm.
+	 * The costs of the edit operations are set to the default 1.
+	 *
+	 * @param tree1 first tree
+	 * @param tree2 second tree
+	 * @return the tree edit distance between tree1 and tree2.
+	 */
+	public static double computeDistance(Node tree1, Node tree2) {
+		RTED_InfoTree_Opt rted = new RTED_InfoTree_Opt(1, 1, 1);
+		return rted.nonNormalizedTreeDist(LblTree.fromXML( tree1 ), LblTree.fromXML( tree2 ));
 	}
 	
 	/**
