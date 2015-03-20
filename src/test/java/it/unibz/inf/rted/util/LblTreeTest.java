@@ -25,8 +25,9 @@ public class LblTreeTest {
             "            +---+ 'speedoflight' \n" +
             "            +---+ 'two' \n";
     @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
+    public void setUpStreams() throws UnsupportedEncodingException {
+	    PrintStream p = new PrintStream( outContent, true, "UTF-8" );
+        System.setOut( p );
     }
     @After
     public void cleanUpStreams() {
@@ -87,7 +88,7 @@ public class LblTreeTest {
 		Node rootElement = Resource2Node("Emc2.mml.xml");
 		LblTree lblTest = LblTree.fromXML( rootElement );
 		lblTest.prettyPrint();
-		assertEquals( MathMLTree, outContent.toString().replaceAll( "\r", "" ) );
+		assertEquals( MathMLTree, outContent.toString("UTF-8").replaceAll( "\r", "" ) );
 	}
 
 	public Node Resource2Node (String ResourceName) throws ParserConfigurationException, IOException, URISyntaxException {
