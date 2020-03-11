@@ -6,10 +6,10 @@
 
     <artifactId>lib-RTED</artifactId>
     <parent>
-        <groupId>com.formulasearchengine</groupId>
+        <groupId>com.formulasearchengine.mathosphere</groupId>
         <artifactId>mathosphere-parent</artifactId>
         <relativePath>../../pom.xml</relativePath>
-        <version>3.0.0</version>
+        <version>3.0.0-SNAPSHOT</version>
     </parent>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
